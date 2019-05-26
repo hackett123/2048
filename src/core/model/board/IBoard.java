@@ -27,5 +27,11 @@ public interface IBoard {
 
     int getBoardHeight();
 
-    void performMove(Direction direction);
+    /**
+     *
+     * @param direction
+     * @return Whether or not a move occurred.
+     */
+    boolean performMove(Direction direction);
+
 }

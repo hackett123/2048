@@ -56,8 +56,10 @@ public class ModelManager implements IModel {
 
   @Override
   public void performMove(Direction direction) {
-    // Defer to the board
-    mBoard.performMove(direction);
+      // Defer to the board
+      if (!mBoard.performMove(direction)) {
+        mController.sendMessage("Invalid move, nothing will happen.");
+      }
   }
 
 

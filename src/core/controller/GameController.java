@@ -69,9 +69,6 @@ public class GameController implements IController {
       mModel.performMove(turn);
       volleyGameState();
     }
-
-    //receive from model if in halting configuration
-    //TODO : this ^
   }
 
   @Override
@@ -92,5 +89,10 @@ public class GameController implements IController {
   @Override
   public void signalGameOver() {
     throw new NotImplementedException();
+  }
+
+  @Override
+  public void sendMessage(String message) {
+    mView.sendMessage(message);
   }
 }

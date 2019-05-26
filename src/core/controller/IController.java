@@ -32,4 +32,6 @@ public interface IController {
      */
     void signalGameOver();
 
+    void sendMessage(String message);
+
 }

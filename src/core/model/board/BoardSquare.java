@@ -31,51 +31,67 @@ public class BoardSquare implements IBoard {
     }
 
     @Override
-    public void performMove(Direction direction) {
+    public boolean performMove(Direction direction) {
         //flip to the right
         int numRotations = RotationFunctionsSquare.rotate(direction, mBoard, mBoardSize);
         int numRotationsToRealign = 4 - numRotations;
 
-        //move to the right.
-        shoveRight();
+        boolean moveOccurred = shoveRight();
+        if (!moveOccurred) {
+            System.out.println("Invalid move");
+        }
 
         //realign board
         RotationFunctionsSquare.rotate(numRotationsToRealign, mBoard, mBoardSize);
-    }
 
-    private void shoveRight() {
-        //row from top
-        for (int i = 0; i < mBoardSize; i++) {
-            shoveRowRight(i);
+        if (moveOccurred) {
+            addTileToBoard();
         }
+        return moveOccurred;
     }
 
-    private void shoveRowRight(int row) {
+    private boolean shoveRight() {
+        //row from top
+        boolean moveOccurred = false;
+        for (int i = 0; i < mBoardSize; i++) {
+            moveOccurred = shoveRowRight(i) || moveOccurred;
+        }
+        return moveOccurred;
+    }
+
+    private boolean shoveRowRight(int row) {
+        boolean moveOccurred = false;
+
         for (int col = mBoardSize - 2; col >= 0; col--) {
             //get tiles
             ITile toShove = mBoard[row][col];
             ITile toTheRight = mBoard[row][col + 1];
+            if (toShove.getRank() != Rank.EMPTY) {
+                //move until adjacent to wall or another block
+                int count = 0;
+                while (toTheRight.getRank() == Rank.EMPTY) {
+                    moveOccurred = true;
+                    toTheRight.setRank(toShove.getRank());
+                    toShove.setRank(Rank.EMPTY);
+                    toShove = toTheRight;
+                    count++;
+                    if (col + 1 + count < mBoardSize) {
+                        toTheRight = mBoard[row][col + 1 + count];
+                    } else {
+                        break;
+                    }
+                }
 
-            //move until adjacent to wall or another block
-            int count = 0;
-            while (toTheRight.getRank() == Rank.EMPTY) {
-                toTheRight.setRank(toShove.getRank());
-                toShove.setRank(Rank.EMPTY);
-                toShove = toTheRight;
-                count++;
-                if (col + 1 + count < mBoardSize) {
-                    toTheRight = mBoard[row][col + 1 + count];
-                } else {
-                    break;
+                //consider combining
+                if (col + 1 + count < mBoardSize && toShove.getRank() == toTheRight.getRank()) {
+                    moveOccurred = true;
+                    toShove.setRank(Rank.EMPTY);
+                    toTheRight.setRank(Rank.values()[toTheRight.getRank().ordinal() + 1]);
                 }
             }
-
-            //consider combining
-            if (col + 1 + count < mBoardSize && toShove.getRank() == toTheRight.getRank()) {
-                toShove.setRank(Rank.EMPTY);
-                toTheRight.setRank(Rank.values()[toTheRight.getRank().ordinal() + 1]);
-            }
         }
+
+        return moveOccurred;
     }
 
 
@@ -98,26 +114,30 @@ public class BoardSquare implements IBoard {
             }
         }
 
-        /**
-         * we choose two starting tiles arbitrarily and at random with a weighted
-         * probability towards rank I and rank II only
-         */
-        Rank firstTileRank = Math.random() < RANK_I_PROBABILITY ? Rank.I : Rank.II;
-        Rank secondTileRank = Math.random() < RANK_I_PROBABILITY ? Rank.I : Rank.II;
-        int xOne = (int) (Math.random() * mBoardSize);
-        int yOne = (int) (Math.random() * mBoardSize);
-        int xTwo = 0;
-        int yTwo = 0;
-        boolean differentTile = false;
-        while (!differentTile) {
-            xTwo = (int) (Math.random() * mBoardSize);
-            yTwo = (int) (Math.random() * mBoardSize);
-            differentTile = (xOne != xTwo || yOne != yTwo);
-        }
-        mBoard[xOne][yOne].setRank(firstTileRank);
-        mBoard[xTwo][yTwo].setRank(secondTileRank);
-
+        addTileToBoard();
+        addTileToBoard();
     }
+
+    private Rank generateRandomRank() {
+        return Math.random() < RANK_I_PROBABILITY ? Rank.I : Rank.II;
+    }
+
+    private void addTileToBoard() {
+        boolean noVacancy = true;
+        int x = 0;
+        int y = 0;
+        while (noVacancy) {
+            x = genPos();
+            y = genPos();
+            noVacancy = mBoard[x][y].getRank() != Rank.EMPTY;
+        }
+        mBoard[x][y].setRank(generateRandomRank());
+    }
+
+    private int genPos() {
+        return (int) (Math.random() * mBoardSize);
+    }
+
 
     @Override
     public void init(BoardDimensions boardDimensions) {
