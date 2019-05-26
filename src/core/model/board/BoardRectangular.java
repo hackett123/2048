@@ -1,14 +1,19 @@
 package core.model.board;
 
 import core.util.BoardDimensions;
+import core.util.Direction;
 import core.util.Rank;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Consumer;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
-import java.util.Arrays;
 
 public class BoardRectangular implements IBoard {
 
     ITile[][] mBoard;
+
+    static final Map<Direction, Consumer<ITile[][]>> mRotateFunctionMap =
+      RotationFunctionsRectangular.getDirectionMap();
 
     //constants : we consider a probability distribution for all ranks as a later feature.
     private static final double RANK_I_PROBABILITY = 0.9;
@@ -31,6 +36,16 @@ public class BoardRectangular implements IBoard {
             throw new IllegalArgumentException("Called before board has been initialized");
         }
         return this.mBoardHeight;
+    }
+
+    @Override
+    public void performMove(Direction direction) {
+
+    }
+
+    @Override
+    public void rotate(Direction direction) {
+
     }
 
 

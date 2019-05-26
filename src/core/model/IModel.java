@@ -38,5 +38,4 @@ public interface IModel {
 
   int getBoardHeight();
 
-
 }

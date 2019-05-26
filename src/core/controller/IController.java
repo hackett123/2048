@@ -12,12 +12,24 @@ public interface IController {
      * Sends user's move choice to the model for board state changes.
      * @param direction
      */
-    public void relayDirection(Direction direction);
+    void relayDirection(Direction direction);
 
     /**
      * Relays array of ranks from the model to the view.
      * @param ranks
      */
-    public void relayBoard(Rank[] ranks);
+    void relayBoard(Rank[] ranks);
+
+    /**
+     * To inform the user that the game has reached its victory
+     * requirements.
+     */
+    void signalGameWon();
+
+    /**
+     * To inform the user that there are no remaining possible moves
+     * and to end the game.
+     */
+    void signalGameOver();
 
 }

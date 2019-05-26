@@ -5,6 +5,7 @@ import core.model.board.BoardRectangular;
 import core.util.BoardDimensions;
 import core.util.Direction;
 import core.util.Rank;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class ModelManager implements IModel {
 
@@ -56,7 +57,8 @@ public class ModelManager implements IModel {
 
   @Override
   public void performMove(Direction direction) {
-    //TODO : write it lol
+    // Defer to the board
+    mBoard.performMove(direction);
   }
 
 

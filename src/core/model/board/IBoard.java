@@ -1,6 +1,7 @@
 package core.model.board;
 
 import core.util.BoardDimensions;
+import core.util.Direction;
 import core.util.Rank;
 
 /**
@@ -26,6 +27,7 @@ public interface IBoard {
 
     int getBoardHeight();
 
+    void performMove(Direction direction);
 
-
+    void rotate(Direction direction);
 }
