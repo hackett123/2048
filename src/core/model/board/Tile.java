@@ -15,4 +15,9 @@ public class Tile implements ITile {
     public Rank getRank() {
         return this.mRank;
     }
+
+    @Override
+    public void setRank(Rank rank) {
+        this.mRank = rank;
+    }
 }

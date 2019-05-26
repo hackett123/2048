@@ -80,6 +80,26 @@ public class CLIHandler implements IView {
     throw new NotImplementedException();
   }
 
+  /**
+   * helper for promptBoardDimensions.
+   */
+  private String acceptsRegex(String regex) {
+    boolean validInput = false;
+    String input = "";
+
+    while (!validInput) {
+      // Poll the scanner for input
+      input = mScanner.next();
+      // See if the input is valid
+      validInput = Pattern.matches(regex, input);
+      // Ask for further input if invalid
+      if (!validInput) {
+        _sendMessage("The given input was not valid. Try again.");
+      }
+    }
+    return input;
+  }
+
   @Override
   public BoardDimensions promptBoardDimensions() {
     // First, prompt the user to input the dimensions.
@@ -88,19 +108,7 @@ public class CLIHandler implements IView {
         + "'5' for a 5x5 square, \n"
         + "'6' for a 6x6 square");
 
-    boolean validInput = false;
-    String input = "";
-
-    while (!validInput) {
-      // Poll the scanner for input
-      input = mScanner.next();
-      // See if the input is valid
-      validInput = Pattern.matches(sInputRegex, input);
-      // Ask for further input if invalid
-      if (!validInput) {
-        _sendMessage("The given input was not valid. Try again.");
-      }
-    }
+    String input = acceptsRegex(sInputRegex);
 
     // Switch on the input
     int inputAsInt = Integer.parseInt(input);
@@ -117,8 +125,32 @@ public class CLIHandler implements IView {
   @Override
   public Direction promptTurn() {
     // Ask the user for input
-    _sendMessage("");
-    return null;
+    _sendMessage("Please press w/a/s/d to make a move.");
+
+    String move = acceptsRegex("[wasdWASD]");
+    move = move.toLowerCase();
+
+    Direction direction = null;
+    switch (move) {
+      case "w":
+        direction = Direction.UP;
+        break;
+      case "a":
+        direction = Direction.LEFT;
+        break;
+      case "s":
+        direction = Direction.DOWN;
+        break;
+      case "d":
+        direction = Direction.RIGHT;
+        break;
+      default:
+        throw new IllegalArgumentException("Impossible input.");
+    }
+    _sendMessage("You are moving " + direction);
+    return direction;
+
+
   }
 
 

@@ -1,5 +1,6 @@
 package core.model.board;
 
+import core.util.BoardDimensions;
 import core.util.Rank;
 
 /**
@@ -14,6 +15,9 @@ public interface IBoard {
 
 
     public void acceptAndUpdateBoardState(Rank[] ranks);
+
+
+    public void init(BoardDimensions boardDimensions);
 
 
 
