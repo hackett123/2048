@@ -20,11 +20,16 @@ public class GameController implements IController {
 
   private IView mView;
 
+  private boolean mHasLost;
+  private boolean mHasWon;
+
 
   public GameController(IModel model, IView view) {
     // Store the given parameters
     mModel = model;
     mView = view;
+    mHasLost = false;
+    mHasWon = false;
 
     // Tell the model to initialize itself
     mModel.init(this);
@@ -49,17 +54,24 @@ public class GameController implements IController {
     enterGameLoop();
   }
 
-  private void enterGameLoop() {
-
+  private void volleyGameState() {
     //receive and print starting game configuration
     Rank[] gameState = mModel.relayGameState();
     mView.acceptAndRenderBoardState(gameState);
+  }
 
-    //first turn...
-    Direction turn = mView.promptTurn();
-    mModel.performMove(turn);
+  private void enterGameLoop() {
+
+    volleyGameState();
+
+    while (!mHasLost) {
+      Direction turn = mView.promptTurn();
+      mModel.performMove(turn);
+      volleyGameState();
+    }
 
     //receive from model if in halting configuration
+    //TODO : this ^
   }
 
   @Override

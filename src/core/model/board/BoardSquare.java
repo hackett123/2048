@@ -32,9 +32,50 @@ public class BoardSquare implements IBoard {
 
     @Override
     public void performMove(Direction direction) {
+        //flip to the right
         int numRotations = RotationFunctionsSquare.rotate(direction, mBoard, mBoardSize);
         int numRotationsToRealign = 4 - numRotations;
+
+        //move to the right.
+        shoveRight();
+
+        //realign board
         RotationFunctionsSquare.rotate(numRotationsToRealign, mBoard, mBoardSize);
+    }
+
+    private void shoveRight() {
+        //row from top
+        for (int i = 0; i < mBoardSize; i++) {
+            shoveRowRight(i);
+        }
+    }
+
+    private void shoveRowRight(int row) {
+        for (int col = mBoardSize - 2; col >= 0; col--) {
+            //get tiles
+            ITile toShove = mBoard[row][col];
+            ITile toTheRight = mBoard[row][col + 1];
+
+            //move until adjacent to wall or another block
+            int count = 0;
+            while (toTheRight.getRank() == Rank.EMPTY) {
+                toTheRight.setRank(toShove.getRank());
+                toShove.setRank(Rank.EMPTY);
+                toShove = toTheRight;
+                count++;
+                if (col + 1 + count < mBoardSize) {
+                    toTheRight = mBoard[row][col + 1 + count];
+                } else {
+                    break;
+                }
+            }
+
+            //consider combining
+            if (col + 1 + count < mBoardSize && toShove.getRank() == toTheRight.getRank()) {
+                toShove.setRank(Rank.EMPTY);
+                toTheRight.setRank(Rank.values()[toTheRight.getRank().ordinal() + 1]);
+            }
+        }
     }
 
 
