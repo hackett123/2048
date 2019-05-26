@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ded31c42-fdec-417d-b119-5db9fd7d15e2" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/core/util/VisibleForTesting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2048/core/controller/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/core/controller/GameController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2048/core/controller/IController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/core/controller/IController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2048/core/model/ModelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/core/model/ModelManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2048/core/model/Mover.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2048/core/model/board/BoardRectangular$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2048/core/model/board/BoardRectangular.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2048/core/model/board/IBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/core/model/board/IBoard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2048/core/util/Direction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/core/util/Direction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/controller/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/model/board/BoardSquare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/model/board/BoardSquare.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/core/model/board/TestRotations.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/core/model/board/TestRotations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/model/board/IBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/model/board/IBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/model/board/RotationFunctionsSquare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/model/board/RotationFunctionsSquare.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,7 +24,6 @@
                 <state relative-caret-position="181">
                   <caret line="65" selection-start-line="65" selection-end-line="65" />
                   <folding>
-                    <element signature="imports" expanded="true" />
                     <element signature="e#1429#1430#0" expanded="true" />
                     <element signature="e#1425#1426#0" expanded="true" />
                     <element signature="e#1443#1444#0" expanded="true" />
@@ -45,11 +34,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="IBoard.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/core/model/board/IBoard.java">
+          <file leaf-file-name="RotationFunctionsSquare.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/core/model/board/RotationFunctionsSquare.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="648">
-                  <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+                <state relative-caret-position="-140">
+                  <caret line="47" column="3" lean-forward="true" selection-start-line="47" selection-start-column="3" selection-end-line="47" selection-end-column="3" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -109,10 +98,12 @@
           <file leaf-file-name="BoardSquare.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/core/model/board/BoardSquare.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="556">
-                  <caret line="106" column="26" selection-start-line="106" selection-start-column="26" selection-end-line="106" selection-end-column="26" />
+                <state relative-caret-position="348">
+                  <caret line="42" column="36" selection-start-line="42" selection-start-column="36" selection-end-line="42" selection-end-column="36" />
                   <folding>
                     <element signature="imports" expanded="true" />
+                    <element signature="e#998#999#0" expanded="true" />
+                    <element signature="e#1031#1032#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -134,8 +125,8 @@
           <file leaf-file-name="TestRotations.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/test/core/model/board/TestRotations.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="282">
-                  <caret line="38" column="32" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
+                <state relative-caret-position="250">
+                  <caret line="47" column="20" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -199,7 +190,6 @@
         <option value="$PROJECT_DIR$/src/core/model/board/Mover.java" />
         <option value="$PROJECT_DIR$/src/core/model/board/IMover.java" />
         <option value="$PROJECT_DIR$/src/core/model/board/MoverRectangular.java" />
-        <option value="$PROJECT_DIR$/src/core/model/board/IBoard.java" />
         <option value="$PROJECT_DIR$/src/core/model/board/RotationFunctionsRectangular.java" />
         <option value="$PROJECT_DIR$/src/core/model/board/BoardRectangular.java" />
         <option value="$PROJECT_DIR$/src/core/util/Direction.java" />
@@ -209,13 +199,15 @@
         <option value="$PROJECT_DIR$/src/core/util/VisibleForTesting.java" />
         <option value="$PROJECT_DIR$/src/core/model/board/TestRotations.java" />
         <option value="$PROJECT_DIR$/test/core/model/board/TestRotations.java" />
+        <option value="$PROJECT_DIR$/src/core/model/board/IBoard.java" />
+        <option value="$PROJECT_DIR$/src/core/model/board/RotationFunctionsSquare.java" />
         <option value="$PROJECT_DIR$/src/core/model/board/BoardSquare.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
-    <option name="width" value="1920" />
+    <option name="width" value="1680" />
     <option name="height" value="963" />
   </component>
   <component name="ProjectView">
@@ -420,12 +412,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestRotations_testRotation90CW - 2019.05.26 at 16h 27m 40s.xml">
-      <configuration name="TestRotations.testRotation90CW" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestRotations_testRotation90CW - 2019.05.26 at 16h 28m 29s.xml">
-      <configuration name="TestRotations.testRotation90CW" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TestRotations_testRotation90CW - 2019.05.26 at 16h 28m 58s.xml">
       <configuration name="TestRotations.testRotation90CW" configurationId="JUnit" />
     </history-entry>
@@ -450,56 +436,62 @@
     <history-entry file="TestRotations_testRotation90CW - 2019.05.26 at 16h 36m 38s.xml">
       <configuration name="TestRotations.testRotation90CW" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TestRotations_testRotation90CW - 2019.05.26 at 16h 37m 23s.xml">
+      <configuration name="TestRotations.testRotation90CW" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestRotations_testRotation90CW - 2019.05.26 at 16h 37m 47s.xml">
+      <configuration name="TestRotations.testRotation90CW" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="963" extended-state="0" />
+    <frame x="0" y="23" width="1920" height="992" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.38132733" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info id="Image Layers" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.17547807" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info id="Capture Tool" />
-      <window_info id="Designer" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14427084" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3296964" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.32733408" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info id="Designer" order="3" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14713542" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette" order="8" />
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="bottom" id="Messages" order="16" weight="0.38132733" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="8" />
+      <window_info anchor="right" id="Capture Analysis" order="2" />
+      <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="bottom" id="Run" order="0" weight="0.29583803" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.26482758" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Capture Tool" order="3" />
-      <window_info id="UI Designer" order="3" />
+      <window_info anchor="bottom" id="Terminal" order="6" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="Designer" order="3" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14427084" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32897604" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="0" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="right" id="Maven Projects" order="4" />
-      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.32733408" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info anchor="right" id="Palette" order="9" />
+      <window_info id="Designer" order="9" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="10" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="5" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.14713542" />
+      <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="12" />
+      <window_info anchor="bottom" id="Version Control" order="13" />
+      <window_info anchor="bottom" id="Run" order="4" weight="0.26482758" />
+      <window_info id="Image Layers" order="10" />
+      <window_info id="Capture Tool" order="11" />
+      <window_info id="UI Designer" order="12" />
+      <window_info anchor="right" id="Theme Preview" order="11" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
+      <window_info anchor="right" id="Palette&#9;" order="12" />
+      <window_info anchor="bottom" id="Terminal" order="14" />
+      <window_info anchor="bottom" id="Event Log" order="15" side_tool="true" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="2" />
+      <window_info anchor="right" id="Maven Projects" order="13" />
+      <window_info id="Favorites" order="13" side_tool="true" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -513,12 +505,6 @@
           <line>68</line>
           <properties />
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/core/model/board/BoardSquare.java</url>
-          <line>70</line>
-          <properties />
-          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="13" />
@@ -579,9 +565,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
           <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -617,6 +600,8 @@
           <caret line="15" column="54" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#998#999#0" expanded="true" />
+            <element signature="e#1031#1032#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -637,7 +622,6 @@
         <state relative-caret-position="294">
           <caret line="14" selection-start-line="14" selection-end-line="14" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="e#1429#1430#0" expanded="true" />
             <element signature="e#1425#1426#0" expanded="true" />
             <element signature="e#1443#1444#0" expanded="true" />
@@ -910,43 +894,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/model/ModelManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="65" selection-start-line="65" selection-end-line="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1429#1430#0" expanded="true" />
-            <element signature="e#1425#1426#0" expanded="true" />
-            <element signature="e#1443#1444#0" expanded="true" />
-            <element signature="e#1488#1489#0" expanded="true" />
-            <element signature="e#1506#1507#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/core/model/board/IMover.java" />
     <entry file="file://$PROJECT_DIR$/src/core/model/board/MoverRectangular.java" />
-    <entry file="file://$PROJECT_DIR$/src/core/model/board/IBoard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/model/board/RotationFunctionsSquare.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/core/util/VisibleForTesting.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
@@ -986,6 +935,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/core/model/board/TestRotations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="47" column="20" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/model/board/IBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/model/ModelManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
+          <folding>
+            <element signature="e#1429#1430#0" expanded="true" />
+            <element signature="e#1425#1426#0" expanded="true" />
+            <element signature="e#1443#1444#0" expanded="true" />
+            <element signature="e#1488#1489#0" expanded="true" />
+            <element signature="e#1506#1507#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/core/util/Coordinate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -993,22 +973,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/model/board/BoardSquare.java">
+    <entry file="file://$PROJECT_DIR$/src/core/model/board/RotationFunctionsSquare.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="556">
-          <caret line="106" column="26" selection-start-line="106" selection-start-column="26" selection-end-line="106" selection-end-column="26" />
+        <state relative-caret-position="-140">
+          <caret line="47" column="3" lean-forward="true" selection-start-line="47" selection-start-column="3" selection-end-line="47" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/core/model/board/TestRotations.java">
+    <entry file="file://$PROJECT_DIR$/src/core/model/board/BoardSquare.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="38" column="32" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
+        <state relative-caret-position="348">
+          <caret line="42" column="36" selection-start-line="42" selection-start-column="36" selection-end-line="42" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#998#999#0" expanded="true" />
+            <element signature="e#1031#1032#0" expanded="true" />
           </folding>
         </state>
       </provider>

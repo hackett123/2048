@@ -28,6 +28,4 @@ public interface IBoard {
     int getBoardHeight();
 
     void performMove(Direction direction);
-
-    void rotate(Direction direction);
 }
