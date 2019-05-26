@@ -26,7 +26,7 @@ public class GameController implements IController {
     mModel.init(this);
 
     // Tell the view to initialize itself
-    mView.init(this);
+    mView.startGame(this);
 
     // All is good- alert the view that the game is to begin and then start
     // the game logic

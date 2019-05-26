@@ -5,7 +5,7 @@ import core.controller.IController;
 public class CLIHandler implements IView {
 
   @Override
-  public void init(IController controller) {
+  public void startGame(IController controller) {
     // Nothing much to initialize - just print a greeting
     System.out.println("Welcome to 2048 in 20:48");
   }
