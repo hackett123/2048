@@ -2,12 +2,12 @@ package core.util;
 
 public enum Direction {
 
-    UP,
+    RIGHT,
 
-    DOWN,
+    UP,
 
     LEFT,
 
-    RIGHT
+    DOWN
 
 }

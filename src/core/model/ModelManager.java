@@ -1,11 +1,10 @@
 package core.model;
 
 import core.controller.IController;
-import core.model.board.BoardRectangular;
+import core.model.board.BoardSquare;
 import core.util.BoardDimensions;
 import core.util.Direction;
 import core.util.Rank;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class ModelManager implements IModel {
 
@@ -24,7 +23,7 @@ public class ModelManager implements IModel {
   private boolean mHasWon;
   private boolean mHasLost;
 
-  BoardRectangular mBoard;
+  BoardSquare mBoard;
 
   private void configureWinningRank(BoardDimensions boardDimensions) {
     switch (boardDimensions) {
@@ -52,7 +51,7 @@ public class ModelManager implements IModel {
   @Override
   public void init(IController controller) {
     this.mController = controller;
-    mBoard = new BoardRectangular();
+    mBoard = new BoardSquare();
   }
 
   @Override

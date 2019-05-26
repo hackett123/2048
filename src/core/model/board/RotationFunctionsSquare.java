@@ -5,15 +5,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
 
-public class RotationFunctionsRectangular {
+public class RotationFunctionsSquare {
 
   static Map<Direction, Consumer<ITile[][]>> getDirectionMap() {
     Map<Direction, Consumer<ITile[][]>> map =
-        new HashMap<Direction, Consumer<ITile[][]>>();
+        new HashMap<>();
     map.put(Direction.RIGHT, (t) -> {});
-    map.put(Direction.LEFT, RotationFunctionsRectangular::rotate180);
-    map.put(Direction.UP, RotationFunctionsRectangular::rotateClockwise90);
-    map.put(Direction.DOWN, RotationFunctionsRectangular::rotateClockwise270);
+    map.put(Direction.LEFT, RotationFunctionsSquare::rotate180);
+    map.put(Direction.UP, RotationFunctionsSquare::rotateClockwise90);
+    map.put(Direction.DOWN, RotationFunctionsSquare::rotateClockwise270);
 
     return map;
   }
@@ -29,5 +29,7 @@ public class RotationFunctionsRectangular {
   static void rotateClockwise270(ITile[][] tiles) {
 
   }
+
+
 
 }
