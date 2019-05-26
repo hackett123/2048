@@ -71,4 +71,14 @@ public class GameController implements IController {
   public void relayBoard(Rank[] ranks) {
     throw new NotImplementedException();
   }
+
+  @Override
+  public void signalGameWon() {
+    throw new NotImplementedException();
+  }
+
+  @Override
+  public void signalGameOver() {
+    throw new NotImplementedException();
+  }
 }

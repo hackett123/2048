@@ -1,14 +1,12 @@
 package core.model.board;
 
-import core.util.BoardDimensions;
-import core.util.Coordinate;
-import core.util.Direction;
-import core.util.Rank;
+import core.util.*;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class BoardSquare implements IBoard {
 
-    private ITile[][] mBoard;
+    @VisibleForTesting
+    ITile[][] mBoard;
 
     //constants : we consider a probability distribution for all ranks as a later feature.
     private static final double RANK_I_PROBABILITY = 0.9;
@@ -50,7 +48,7 @@ public class BoardSquare implements IBoard {
 
       // Perform those rotations
       for (int i = 0; i < numRotations; i++) {
-        rotateClockwise90(new Coordinate(0, 0), numLayers, numLayers);
+        rotateClockwise90(new Coordinate(0, 0), numLayers - 1, numLayers);
       }
     }
 
@@ -62,7 +60,7 @@ public class BoardSquare implements IBoard {
       } else {
         // non-base case
         // Determine how many 4-Coordinate swaps we need for this layer
-        int layerOffset = (numLayers - layer);
+        int layerOffset = (numLayers - layer) - 1;
         int num4CoordinateSwaps = (mBoardWidth - 1) - (2 * layerOffset);
 
         // For each swap...
@@ -104,7 +102,10 @@ public class BoardSquare implements IBoard {
 
       // Swap all four at once
       for (int i = 0; i < 4; i++) {
-        int destIndex = (i + 1) % 4;
+        int destIndex = i - 1;
+        if (destIndex == -1) {
+            destIndex = 3;
+        }
         Coordinate destCoord = allSwapCoordinates[destIndex];
         mBoard[destCoord.getX()][destCoord.getY()] = currentState[i];
       }
@@ -138,7 +139,7 @@ public class BoardSquare implements IBoard {
 
 
     private Coordinate rotateClockwise90Transform(Coordinate src) {
-      int newX = mBoardWidth - src.getY();
+      int newX = (mBoardWidth - 1) - src.getY();
       int newY = src.getX();
       return new Coordinate(newX, newY);
     }
