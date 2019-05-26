@@ -5,6 +5,8 @@ package core.util;
  * a given rank combine to form a tile of the next rank.
  */
 public enum Rank {
+  EMPTY,
+
   I,
 
   II,

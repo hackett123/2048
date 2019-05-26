@@ -1,5 +1,6 @@
 package core.view;
 
+import core.util.IHighScore;
 import core.util.Rank;
 import core.controller.IController;
 
@@ -13,6 +14,18 @@ public interface IView {
   void startGame(IController controller);
 
   /**
+   * Resets the game. Needs to be called after {@link #startGame(IController)} to execute properly.
+   * @param controller
+   */
+  void resetGame();
+
+
+  /**
+   * To inform the user that the game has ended.
+   */
+  void signalEndOfGame();
+
+  /**
    * To deliver text to the user through this view's standard output mechanism.
    * @param message The text to display.
    */
@@ -23,12 +36,9 @@ public interface IView {
    */
   void acceptAndRenderBoardState(Rank[] ranks);
 
-  /**
-   * To inform the user that the game has ended.
-   */
-  void signalEndOfGame();
 
 
-  void acceptHighScores(IHighScore[] highScores);
+  void acceptAndRenderHighScores(IHighScore[] highScores);
+
 
 }
