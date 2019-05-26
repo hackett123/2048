@@ -1,6 +1,7 @@
 package core.view;
 
 import core.util.BoardDimensions;
+import core.util.Direction;
 import core.util.IHighScore;
 import core.util.Rank;
 import core.controller.IController;
@@ -47,5 +48,12 @@ public interface IView {
    * @return The dimensions.
    */
   BoardDimensions promptBoardDimensions();
+
+  /**
+   * To prompt the user to make a turn and to return the
+   * Direction associated with the input.
+   * @return The direction desired.
+   */
+  Direction promptTurn();
 
 }

@@ -2,6 +2,7 @@ package core.view;
 
 import core.controller.IController;
 import core.util.BoardDimensions;
+import core.util.Direction;
 import core.util.IHighScore;
 import core.util.Rank;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
@@ -51,6 +52,11 @@ public class GUIHandler implements IView {
 
   @Override
   public BoardDimensions promptBoardDimensions() {
+    throw new NotImplementedException();
+  }
+
+  @Override
+  public Direction promptTurn() {
     throw new NotImplementedException();
   }
 }

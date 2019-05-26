@@ -2,6 +2,7 @@ package core.view;
 
 import core.controller.IController;
 import core.util.BoardDimensions;
+import core.util.Direction;
 import core.util.IHighScore;
 import core.util.Rank;
 import java.util.Scanner;
@@ -112,6 +113,14 @@ public class CLIHandler implements IView {
 
     return dims;
   }
+
+  @Override
+  public Direction promptTurn() {
+    // Ask the user for input
+    _sendMessage("");
+    return null;
+  }
+
 
   /**
    * Formats the board for printing.

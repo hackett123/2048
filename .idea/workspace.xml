@@ -2,16 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ded31c42-fdec-417d-b119-5db9fd7d15e2" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/core/util/BoardDimensions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2048/core/controller/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/core/controller/GameController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2048/core/controller/IController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/core/controller/IController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2048/core/model/IModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/core/model/IModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2048/core/model/ModelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/core/model/ModelManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2048/core/view/CLIHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/core/view/CLIHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2048/core/view/GUIHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/core/view/GUIHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2048/core/view/IView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/core/view/IView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/controller/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/view/CLIHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/view/CLIHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/view/GUIHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/view/GUIHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/view/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/view/IView.java" afterDir="false" />
@@ -43,7 +33,7 @@
           <file leaf-file-name="GameController.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/core/controller/GameController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="279">
+                <state relative-caret-position="579">
                   <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -68,8 +58,8 @@
           <file leaf-file-name="CLIHandler.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/core/view/CLIHandler.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="388">
-                  <caret line="82" column="49" selection-start-line="82" selection-start-column="49" selection-end-line="82" selection-end-column="49" />
+                <state relative-caret-position="363">
+                  <caret line="119" column="18" selection-start-line="119" selection-start-column="18" selection-end-line="119" selection-end-column="18" />
                   <folding>
                     <element signature="method#CLIHandler#0;class#CLIHandler#0" />
                     <element signature="method#_startGame#0;class#CLIHandler#0" />
@@ -89,11 +79,13 @@
           <file leaf-file-name="GUIHandler.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/core/view/GUIHandler.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="435">
-                  <caret line="53" column="40" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
+                <state relative-caret-position="438">
+                  <caret line="59" column="40" selection-start-line="59" selection-start-column="40" selection-end-line="59" selection-end-column="40" />
                   <folding>
                     <element signature="e#1197#1198#0" expanded="true" />
                     <element signature="e#1241#1242#0" expanded="true" />
+                    <element signature="e#1317#1318#0" expanded="true" />
+                    <element signature="e#1362#1363#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -103,11 +95,11 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="IView.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="IView.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/core/view/IView.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="258">
-                  <caret line="46" column="28" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
+                <state relative-caret-position="513">
+                  <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -115,7 +107,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="BoardDimensions.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="BoardDimensions.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/core/util/BoardDimensions.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="150">
@@ -159,10 +151,10 @@
         <option value="$PROJECT_DIR$/src/core/model/ModelManager.java" />
         <option value="$PROJECT_DIR$/src/core/controller/IController.java" />
         <option value="$PROJECT_DIR$/src/core/util/BoardDimensions.java" />
+        <option value="$PROJECT_DIR$/src/core/controller/GameController.java" />
         <option value="$PROJECT_DIR$/src/core/view/IView.java" />
         <option value="$PROJECT_DIR$/src/core/view/GUIHandler.java" />
         <option value="$PROJECT_DIR$/src/core/view/CLIHandler.java" />
-        <option value="$PROJECT_DIR$/src/core/controller/GameController.java" />
       </list>
     </option>
   </component>
@@ -395,6 +387,8 @@
           <folding>
             <element signature="e#1197#1198#0" expanded="true" />
             <element signature="e#1241#1242#0" expanded="true" />
+            <element signature="e#1317#1318#0" expanded="true" />
+            <element signature="e#1362#1363#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -575,27 +569,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/view/IView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="46" column="28" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/view/GUIHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="53" column="40" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
-          <folding>
-            <element signature="e#1197#1198#0" expanded="true" />
-            <element signature="e#1241#1242#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/core/util/BoardDimensions.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -605,7 +578,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/core/controller/GameController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
+        <state relative-caret-position="579">
           <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -617,10 +590,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/view/GUIHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="59" column="40" selection-start-line="59" selection-start-column="40" selection-end-line="59" selection-end-column="40" />
+          <folding>
+            <element signature="e#1197#1198#0" expanded="true" />
+            <element signature="e#1241#1242#0" expanded="true" />
+            <element signature="e#1317#1318#0" expanded="true" />
+            <element signature="e#1362#1363#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/core/view/CLIHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="82" column="49" selection-start-line="82" selection-start-column="49" selection-end-line="82" selection-end-column="49" />
+        <state relative-caret-position="363">
+          <caret line="119" column="18" selection-start-line="119" selection-start-column="18" selection-end-line="119" selection-end-column="18" />
           <folding>
             <element signature="method#CLIHandler#0;class#CLIHandler#0" />
             <element signature="method#_startGame#0;class#CLIHandler#0" />
@@ -632,6 +618,16 @@
             <element signature="docComment;class#BoardFormatter#0;class#CLIHandler#0" />
             <element signature="class#BoardFormatter#0;class#CLIHandler#0" />
             <element signature="method#formatBoardForPrinting#0;class#BoardFormatter#0;class#CLIHandler#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/view/IView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
