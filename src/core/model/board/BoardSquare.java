@@ -12,28 +12,29 @@ public class BoardSquare implements IBoard {
     private static final double RANK_I_PROBABILITY = 0.9;
     private static final double RANK_II_PROBABILITY = 0.1;
 
-    private int mBoardWidth;
-    private int mBoardHeight;
+    private int mBoardSize;
 
     @Override
     public int getBoardWidth() {
-        if (this.mBoardWidth == 0) {
+        if (this.mBoardSize == 0) {
             throw new IllegalArgumentException("Called before board has been initialized");
         }
-        return this.mBoardWidth;
+        return this.mBoardSize;
     }
 
     @Override
     public int getBoardHeight() {
-        if (this.mBoardHeight == 0) {
+        if (this.mBoardSize == 0) {
             throw new IllegalArgumentException("Called before board has been initialized");
         }
-        return this.mBoardHeight;
+        return this.mBoardSize;
     }
 
     @Override
     public void performMove(Direction direction) {
-        RotationFunctionsSquare.rotate(direction, mBoard, mBoardWidth);
+        int numRotations = RotationFunctionsSquare.rotate(direction, mBoard, mBoardSize);
+        int numRotationsToRealign = 4 - numRotations;
+        RotationFunctionsSquare.rotate(numRotationsToRealign, mBoard, mBoardSize);
     }
 
 
@@ -62,14 +63,14 @@ public class BoardSquare implements IBoard {
          */
         Rank firstTileRank = Math.random() < RANK_I_PROBABILITY ? Rank.I : Rank.II;
         Rank secondTileRank = Math.random() < RANK_I_PROBABILITY ? Rank.I : Rank.II;
-        int xOne = (int) (Math.random() * mBoardWidth);
-        int yOne = (int) (Math.random() * mBoardHeight);
+        int xOne = (int) (Math.random() * mBoardSize);
+        int yOne = (int) (Math.random() * mBoardSize);
         int xTwo = 0;
         int yTwo = 0;
         boolean differentTile = false;
         while (!differentTile) {
-            xTwo = (int) (Math.random() * mBoardWidth);
-            yTwo = (int) (Math.random() * mBoardHeight);
+            xTwo = (int) (Math.random() * mBoardSize);
+            yTwo = (int) (Math.random() * mBoardSize);
             differentTile = (xOne != xTwo || yOne != yTwo);
         }
         mBoard[xOne][yOne].setRank(firstTileRank);
@@ -82,18 +83,18 @@ public class BoardSquare implements IBoard {
         switch (boardDimensions) {
             case SQUARE4:
                 mBoard = new Tile[4][4];
-                mBoardWidth = 4;
-                mBoardHeight = 4;
+                mBoardSize = 4;
+                mBoardSize = 4;
                 break;
             case SQUARE5:
                 mBoard = new Tile[5][5];
-                mBoardWidth = 5;
-                mBoardHeight = 5;
+                mBoardSize = 5;
+                mBoardSize = 5;
                 break;
             case SQUARE6:
                 mBoard = new Tile[6][6];
-                mBoardWidth = 6;
-                mBoardHeight = 6;
+                mBoardSize = 6;
+                mBoardSize = 6;
                 break;
             default:
                 throw new IllegalArgumentException("Forgot to implement new case for new board dimension, perish.");
@@ -104,10 +105,10 @@ public class BoardSquare implements IBoard {
 
     @Override
     public Rank[] relayGameState() {
-        Rank[] ranks = new Rank[mBoardWidth * mBoardHeight];
+        Rank[] ranks = new Rank[mBoardSize * mBoardSize];
         for (int i = 0; i < mBoard.length; i++) {
             for (int j = 0; j < mBoard[i].length; j++) {
-                ranks[i * mBoardWidth + j] = mBoard[i][j].getRank();
+                ranks[i * mBoardSize + j] = mBoard[i][j].getRank();
             }
         }
 

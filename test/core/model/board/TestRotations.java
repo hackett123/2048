@@ -32,7 +32,7 @@ public class TestRotations {
   @Test
   public void testRotation90CW() {
 
-    board.performMove(Direction.UP);
+    RotationFunctionsSquare.rotate(Direction.UP, board.mBoard, 4);
 
     ITile[][] rotated = new ITile[4][4];
     for (int i = 0; i < 4; i++) {

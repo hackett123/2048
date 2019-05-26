@@ -31,20 +31,29 @@ public class RotationFunctionsSquare {
 
   }
 
-
-  static void rotate(Direction direction, ITile[][] board, int size) {
-    // Determine how many times to rotate the board CW 90
-    int numRotations = direction.ordinal();
-
+  private static void _rotate(int numRotationsClockwise, ITile[][] board, int size) {
     // Get the number of layers for this board size
     // Layers increase OUTWARDS such that the outer perimeter of the square
     // board is the highest layer number.
     int numLayers = (int) Math.ceil(size / 2.0);
 
     // Perform those rotations
-    for (int i = 0; i < numRotations; i++) {
+    for (int i = 0; i < numRotationsClockwise; i++) {
       rotateClockwise90(new Coordinate(0, 0), numLayers - 1, numLayers, size, board);
     }
+  }
+
+  static void rotate(int numRotationsClockwise, ITile[][] board, int size) {
+    _rotate(numRotationsClockwise, board, size);
+  }
+
+  //flips board and relays the number of flips it made clockwise.
+  static int rotate(Direction direction, ITile[][] board, int size) {
+    // Determine how many times to rotate the board CW 90
+    int numRotations = direction.ordinal();
+    _rotate(numRotations, board, size);
+
+    return numRotations;
   }
 
   private static void rotateClockwise90(Coordinate topLeft, int layer, int numLayers, int size, ITile[][] board) {
