@@ -1,6 +1,7 @@
 package core.view;
 
 import core.controller.IController;
+import core.util.BoardDimensions;
 import core.util.IHighScore;
 import core.util.Rank;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
@@ -45,6 +46,11 @@ public class GUIHandler implements IView {
 
   @Override
   public void acceptAndRenderHighScores(IHighScore[] highScores) {
+    throw new NotImplementedException();
+  }
+
+  @Override
+  public BoardDimensions promptBoardDimensions() {
     throw new NotImplementedException();
   }
 }

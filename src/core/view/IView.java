@@ -1,5 +1,6 @@
 package core.view;
 
+import core.util.BoardDimensions;
 import core.util.IHighScore;
 import core.util.Rank;
 import core.controller.IController;
@@ -15,7 +16,6 @@ public interface IView {
 
   /**
    * Resets the game. Needs to be called after {@link #startGame(IController)} to execute properly.
-   * @param controller
    */
   void resetGame();
 
@@ -40,5 +40,12 @@ public interface IView {
 
   void acceptAndRenderHighScores(IHighScore[] highScores);
 
+  /**
+   * To prompt the user for a board shape and size and to
+   * return the {@link core.util.BoardDimensions} associated
+   * with that shape/size.
+   * @return The dimensions.
+   */
+  BoardDimensions promptBoardDimensions();
 
 }

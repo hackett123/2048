@@ -1,7 +1,11 @@
 package core.controller;
 
 import core.model.IModel;
+import core.util.BoardDimensions;
+import core.util.Direction;
+import core.util.Rank;
 import core.view.IView;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 /**
  * :)
@@ -28,9 +32,21 @@ public class GameController implements IController {
     // Tell the view to initialize itself
     mView.startGame(this);
 
+    // Ask the view for board dimensions
+    BoardDimensions boardDimensions = mView.promptBoardDimensions();
+
     // All is good- alert the view that the game is to begin and then start
     // the game logic
     mView.sendMessage("Press an arrow key to start.");
   }
 
+  @Override
+  public void relayDirection(Direction direction) {
+    throw new NotImplementedException();
+  }
+
+  @Override
+  public void relayBoard(Rank[] ranks) {
+    throw new NotImplementedException();
+  }
 }
