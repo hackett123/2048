@@ -1,5 +1,6 @@
 package core.view;
 
+import com.sun.tools.corba.se.idl.constExpr.Not;
 import core.controller.IController;
 import core.util.BoardDimensions;
 import core.util.Direction;
@@ -57,6 +58,11 @@ public class GUIHandler implements IView {
 
   @Override
   public Direction promptTurn() {
+    throw new NotImplementedException();
+  }
+
+  @Override
+  public void acceptBoardDimensions(int width, int height) {
     throw new NotImplementedException();
   }
 }

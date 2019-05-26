@@ -39,11 +39,25 @@ public class GameController implements IController {
     // the game logic
     mView.sendMessage("Press an arrow key to start.");
 
+    //initialize the model's board and set starting configuration
+    mModel.acceptBoardDimensions(boardDimensions);
+
+    //give w and h to view for rendering details
+    mView.acceptBoardDimensions(mModel.getBoardWidth(), mModel.getBoardHeight());
+
+
     enterGameLoop();
   }
 
   private void enterGameLoop() {
+
+    //receive and print starting game configuration
+    Rank[] gameState = mModel.relayGameState();
+    mView.acceptAndRenderBoardState(gameState);
+
+    //first turn...
     Direction turn = mView.promptTurn();
+    mModel.performMove(turn);
 
     //receive from model if in halting configuration
   }

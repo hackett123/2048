@@ -3,6 +3,7 @@ package core.model;
 import core.controller.IController;
 import core.util.BoardDimensions;
 import core.util.Direction;
+import core.util.Rank;
 
 public interface IModel {
 
@@ -26,4 +27,16 @@ public interface IModel {
    * @param direction
    */
   void performMove(Direction direction);
+
+  /**
+   * take 2D board and convert to a single-dimensional array of the ranks themselves in row-major order.
+   * @return rank array representing state of board
+   */
+  Rank[] relayGameState();
+
+  int getBoardWidth();
+
+  int getBoardHeight();
+
+
 }

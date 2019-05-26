@@ -1,7 +1,7 @@
 package core.model;
 
 import core.controller.IController;
-import core.model.board.Board;
+import core.model.board.BoardRectangular;
 import core.util.BoardDimensions;
 import core.util.Direction;
 import core.util.Rank;
@@ -23,7 +23,7 @@ public class ModelManager implements IModel {
   private boolean mHasWon;
   private boolean mHasLost;
 
-  Board mBoard;
+  BoardRectangular mBoard;
 
   private void configureWinningRank(BoardDimensions boardDimensions) {
     switch (boardDimensions) {
@@ -51,10 +51,27 @@ public class ModelManager implements IModel {
   @Override
   public void init(IController controller) {
     this.mController = controller;
+    mBoard = new BoardRectangular();
   }
 
   @Override
   public void performMove(Direction direction) {
+    //TODO : write it lol
+  }
 
+
+  @Override
+  public Rank[] relayGameState() {
+    return mBoard.relayGameState();
+  }
+
+  @Override
+  public int getBoardWidth() {
+    return this.mBoard.getBoardWidth();
+  }
+
+  @Override
+  public int getBoardHeight() {
+    return this.mBoard.getBoardHeight();
   }
 }

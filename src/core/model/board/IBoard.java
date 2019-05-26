@@ -19,6 +19,13 @@ public interface IBoard {
 
     public void init(BoardDimensions boardDimensions);
 
+    public Rank[] relayGameState();
+
+
+    int getBoardWidth();
+
+    int getBoardHeight();
+
 
 
 }

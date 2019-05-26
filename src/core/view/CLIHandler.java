@@ -12,7 +12,9 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 public class CLIHandler implements IView {
 
   private IController mController;
-  //Board
+
+  private int mBoardWidth;
+  private int mBoardHeight;
 
 
   private Scanner mScanner;
@@ -57,7 +59,6 @@ public class CLIHandler implements IView {
 
   @Override
   public void acceptAndRenderBoardState(Rank[] ranks) {
-
     //check for nulls
     for (Rank rank : ranks) {
       if (rank == null) {
@@ -65,8 +66,25 @@ public class CLIHandler implements IView {
       }
     }
 
-    // TODO parse to 2D array for printing
-    throw new NotImplementedException();
+    int count = 0;
+    //convert to 2d array for the powers of two.
+    for (Rank rank : ranks) {
+      int value = (int) Math.pow(2, rank.ordinal());
+
+      if (value == 1) {
+        System.out.print(".\t");
+      } else {
+        System.out.print(value + "\t");
+      }
+
+      count++;
+      if (count % mBoardWidth == 0) {
+        System.out.println();
+      }
+
+    }
+
+
   }
 
 
@@ -151,6 +169,12 @@ public class CLIHandler implements IView {
     return direction;
 
 
+  }
+
+  @Override
+  public void acceptBoardDimensions(int width, int height) {
+    this.mBoardWidth = width;
+    this.mBoardHeight = height;
   }
 
 

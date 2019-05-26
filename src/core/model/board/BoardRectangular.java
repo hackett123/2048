@@ -4,7 +4,9 @@ import core.util.BoardDimensions;
 import core.util.Rank;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
-public class Board implements IBoard {
+import java.util.Arrays;
+
+public class BoardRectangular implements IBoard {
 
     ITile[][] mBoard;
 
@@ -14,6 +16,23 @@ public class Board implements IBoard {
 
     private int mBoardWidth;
     private int mBoardHeight;
+
+    @Override
+    public int getBoardWidth() {
+        if (this.mBoardWidth == 0) {
+            throw new IllegalArgumentException("Called before board has been initialized");
+        }
+        return this.mBoardWidth;
+    }
+
+    @Override
+    public int getBoardHeight() {
+        if (this.mBoardHeight == 0) {
+            throw new IllegalArgumentException("Called before board has been initialized");
+        }
+        return this.mBoardHeight;
+    }
+
 
     @Override
     public Rank[] getBoard() {
@@ -77,5 +96,17 @@ public class Board implements IBoard {
         }
 
         setInitialBoardState();
+    }
+
+    @Override
+    public Rank[] relayGameState() {
+        Rank[] ranks = new Rank[mBoardWidth * mBoardHeight];
+        for (int i = 0; i < mBoard.length; i++) {
+            for (int j = 0; j < mBoard[i].length; j++) {
+                ranks[i * mBoardWidth + j] = mBoard[i][j].getRank();
+            }
+        }
+
+        return ranks;
     }
 }

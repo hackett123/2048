@@ -56,4 +56,6 @@ public interface IView {
    */
   Direction promptTurn();
 
+  void acceptBoardDimensions(int width, int height);
+
 }
