@@ -63,6 +63,8 @@ public class BoardSquare implements IBoard {
         boolean moveOccurred = false;
 
         for (int col = mBoardSize - 2; col >= 0; col--) {
+            int border = mBoardSize;
+
             //get tiles
             ITile toShove = mBoard[row][col];
             ITile toTheRight = mBoard[row][col + 1];
@@ -75,7 +77,7 @@ public class BoardSquare implements IBoard {
                     toShove.setRank(Rank.EMPTY);
                     toShove = toTheRight;
                     count++;
-                    if (col + 1 + count < mBoardSize) {
+                    if (col + 1 + count < border) {
                         toTheRight = mBoard[row][col + 1 + count];
                     } else {
                         break;
@@ -83,10 +85,11 @@ public class BoardSquare implements IBoard {
                 }
 
                 //consider combining
-                if (col + 1 + count < mBoardSize && toShove.getRank() == toTheRight.getRank()) {
+                if (col + 1 + count < border && toShove.getRank() == toTheRight.getRank()) {
                     moveOccurred = true;
                     toShove.setRank(Rank.EMPTY);
                     toTheRight.setRank(Rank.values()[toTheRight.getRank().ordinal() + 1]);
+                    border--;
                 }
             }
         }

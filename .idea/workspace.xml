@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ded31c42-fdec-417d-b119-5db9fd7d15e2" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2048/core/controller/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/core/controller/GameController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2048/core/model/ModelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/core/model/ModelManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2048/core/model/board/BoardSquare$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/core/model/board/BoardSquare$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2048/core/model/board/BoardSquare.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/core/model/board/BoardSquare.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/controller/IController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/controller/IController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/model/IModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/model/IModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/model/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/model/ModelManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/model/board/BoardSquare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/model/board/BoardSquare.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/model/board/IBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/model/board/IBoard.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,14 +13,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.22093731">
+    <splitter split-orientation="horizontal" split-proportion="0.383464">
       <split-first>
         <leaf>
           <file leaf-file-name="ModelManager.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/core/model/ModelManager.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="403">
-                  <caret line="68" column="3" lean-forward="true" selection-start-line="68" selection-start-column="3" selection-end-line="68" selection-end-column="3" />
+                  <caret line="68" column="3" selection-start-line="68" selection-start-column="3" selection-end-line="68" selection-end-column="3" />
                   <folding>
                     <element signature="e#1390#1391#0" expanded="true" />
                     <element signature="e#1429#1430#0" expanded="true" />
@@ -159,8 +149,8 @@
           <file leaf-file-name="BoardSquare.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/core/model/board/BoardSquare.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1501">
-                  <caret line="47" column="29" lean-forward="true" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
+                <state relative-caret-position="597">
+                  <caret line="91" column="29" selection-start-line="91" selection-start-column="29" selection-end-line="91" selection-end-column="29" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#4427#4428#0" expanded="true" />
@@ -242,7 +232,7 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
-    <option name="width" value="1680" />
+    <option name="width" value="1108" />
     <option name="height" value="963" />
   </component>
   <component name="ProjectView">
@@ -472,7 +462,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="992" extended-state="6" />
+    <frame x="0" y="23" width="1680" height="963" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="8" />
@@ -483,12 +473,12 @@
       <window_info anchor="right" id="Capture Analysis" order="2" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info anchor="bottom" id="Run" order="0" visible="true" weight="0.2875817" />
+      <window_info active="true" anchor="bottom" id="Run" order="0" visible="true" weight="0.088863894" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Terminal" order="6" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14427084" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10595238" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32897604" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="0" weight="0.25" />
@@ -1013,7 +1003,7 @@
     <entry file="file://$PROJECT_DIR$/src/core/model/ModelManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="403">
-          <caret line="68" column="3" lean-forward="true" selection-start-line="68" selection-start-column="3" selection-end-line="68" selection-end-column="3" />
+          <caret line="68" column="3" selection-start-line="68" selection-start-column="3" selection-end-line="68" selection-end-column="3" />
           <folding>
             <element signature="e#1390#1391#0" expanded="true" />
             <element signature="e#1429#1430#0" expanded="true" />
@@ -1027,8 +1017,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/core/model/board/BoardSquare.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1501">
-          <caret line="47" column="29" lean-forward="true" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
+        <state relative-caret-position="597">
+          <caret line="91" column="29" selection-start-line="91" selection-start-column="29" selection-end-line="91" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#4427#4428#0" expanded="true" />
