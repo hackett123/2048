@@ -10,8 +10,6 @@ public class BoardSquare implements IBoard {
 
     //constants : we consider a probability distribution for all ranks as a later feature.
     private static final double RANK_I_PROBABILITY = 0.9;
-    private static final double RANK_II_PROBABILITY = 0.1;
-
     private int mBoardSize;
 
     @Override
@@ -89,7 +87,7 @@ public class BoardSquare implements IBoard {
                     moveOccurred = true;
                     toShove.setRank(Rank.EMPTY);
                     toTheRight.setRank(Rank.values()[toTheRight.getRank().ordinal() + 1]);
-                    border--;
+                    --border;
                 }
             }
         }
@@ -148,16 +146,13 @@ public class BoardSquare implements IBoard {
             case SQUARE4:
                 mBoard = new Tile[4][4];
                 mBoardSize = 4;
-                mBoardSize = 4;
                 break;
             case SQUARE5:
                 mBoard = new Tile[5][5];
                 mBoardSize = 5;
-                mBoardSize = 5;
                 break;
             case SQUARE6:
                 mBoard = new Tile[6][6];
-                mBoardSize = 6;
                 mBoardSize = 6;
                 break;
             default:

@@ -1,6 +1,5 @@
 package core.view;
 
-import com.sun.tools.corba.se.idl.constExpr.Not;
 import core.controller.IController;
 import core.util.BoardDimensions;
 import core.util.Direction;
