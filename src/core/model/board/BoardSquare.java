@@ -35,9 +35,6 @@ public class BoardSquare implements IBoard {
         int numRotationsToRealign = 4 - numRotations;
 
         boolean moveOccurred = shoveRight();
-        if (!moveOccurred) {
-            System.out.println("Invalid move");
-        }
 
         //realign board
         RotationFunctionsSquare.rotate(numRotationsToRealign, mBoard, mBoardSize);

@@ -5,19 +5,24 @@ import core.util.BoardDimensions;
 import core.util.Direction;
 import core.util.IHighScore;
 import core.util.Rank;
+import core.view.gui.GUIComponents;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Pattern;
 
 public class GUIHandler implements IView {
 
   private IController mController;
+  private GUIComponents mGuiComps;
 
   private void _startGame(IController controller) {
     if (controller == null) {
       throw new IllegalArgumentException("Null controller provided");
     }
     this.mController = controller;
-
-    throw new NotImplementedException();
+    mGuiComps = new GUIComponents(this);
   }
 
   @Override
@@ -32,12 +37,13 @@ public class GUIHandler implements IView {
 
   @Override
   public void sendMessage(String message) {
-    throw new NotImplementedException();
+    //TODO : Implement Real User Experience rather than doing nothing
+    return;
   }
 
   @Override
   public void acceptAndRenderBoardState(Rank[] ranks) {
-    throw new NotImplementedException();
+    mGuiComps.render(ranks);
   }
 
   @Override
@@ -52,16 +58,38 @@ public class GUIHandler implements IView {
 
   @Override
   public BoardDimensions promptBoardDimensions() {
-    throw new NotImplementedException();
+    //TODO : Implement Real User Experience rather than defaulting to 4x4
+    return BoardDimensions.SQUARE4;
   }
 
   @Override
   public Direction promptTurn() {
-    throw new NotImplementedException();
+    String move = mGuiComps.getMove();
+    move = move.toLowerCase();
+
+    Direction direction;
+    switch (move) {
+      case "w":
+        direction = Direction.UP;
+        break;
+      case "a":
+        direction = Direction.LEFT;
+        break;
+      case "s":
+        direction = Direction.DOWN;
+        break;
+      case "d":
+        direction = Direction.RIGHT;
+        break;
+      default:
+        throw new IllegalArgumentException("Impossible input.");
+    }
+    return direction;
   }
 
   @Override
   public void acceptBoardDimensions(int width, int height) {
-    throw new NotImplementedException();
+    //TODO : Implement Real User Experience rather than defaulting to 4x4
+
   }
 }
