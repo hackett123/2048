@@ -33,7 +33,7 @@ public interface IView {
   void sendMessage(String message);
 
   /**
-   * To accept the current state of the board and to render each tile on the screen accordingly.
+   * To accept the current state of the board and to renderBoardState each tile on the screen accordingly.
    */
   void acceptAndRenderBoardState(Rank[] ranks);
 

@@ -1,10 +1,8 @@
 package core.view.gui;
 
 import core.util.Rank;
-import core.view.IView;
 
 import javax.swing.*;
-import javax.swing.event.AncestorListener;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -12,15 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-public class GUIComponents implements Runnable {
-
-    //TBD if necessary to have pointer back to IView
-    IView mView;
+public class GuiRenderer implements Runnable, IGuiRenderer {
 
     //GUI comps
-    JFrame mFrame;
-    JPanel mContainer, mGamePanel, mStatusPanel;
-    JLabel[][] tiles;
+    private JFrame mFrame;
+    private JPanel mContainer, mGamePanel, mStatusPanel;
+    private JLabel[][] mTiles;
+    private JLabel mScoreLabel;
 
 
     //Constants
@@ -70,6 +66,7 @@ public class GUIComponents implements Runnable {
         return justSentMove;
     }
 
+    @Override
     public String getMove() {
         while (justSentMove()) {
             try {
@@ -83,14 +80,15 @@ public class GUIComponents implements Runnable {
 
     }
 
-    public void render(Rank[] ranks) {
+    @Override
+    public void renderBoardState(Rank[] ranks) {
         for (Rank rank : ranks) {
             if (rank == null) {
                 throw new IllegalArgumentException("Provided null rank in array");
             }
         }
 
-        List<String> values = new ArrayList<String>();
+        List<String> values = new ArrayList<>();
         //convert to 2d array for the powers of two.
         for (Rank rank : ranks) {
             int value = (int) Math.pow(2, rank.ordinal());
@@ -101,10 +99,15 @@ public class GUIComponents implements Runnable {
             for (int j = 0; j < NUM_COLS; j++) {
                 String value = values.get(i * NUM_ROWS + j);
                 String toShow = value.equals("1") ? "" : value;
-                tiles[i][j].setText(toShow);
-                tiles[i][j].setBackground(RANK_COLORING[ranks[i * NUM_ROWS + j].ordinal() % RANK_COLORING.length]);
+                mTiles[i][j].setText(toShow);
+                mTiles[i][j].setBackground(RANK_COLORING[ranks[i * NUM_ROWS + j].ordinal() % RANK_COLORING.length]);
             }
         }
+    }
+
+    @Override
+    public void renderScore(int score) {
+        mScoreLabel.setText("" + score);
     }
 
     @Override
@@ -118,8 +121,7 @@ public class GUIComponents implements Runnable {
     }
 
 
-    public GUIComponents(IView view) {
-        this.mView = view;
+    public GuiRenderer() {
         run();
     }
 
@@ -153,11 +155,11 @@ public class GUIComponents implements Runnable {
 
     private void addGamePanelComps() {
         mGamePanel.setLayout(new GridLayout(NUM_ROWS, NUM_COLS));
-        tiles = new JLabel[NUM_ROWS][NUM_COLS];
+        mTiles = new JLabel[NUM_ROWS][NUM_COLS];
         for (int i = 0; i < NUM_ROWS; i++) {
             for (int j = 0; j < NUM_COLS; j++) {
                 JLabel currTile = new JLabel("0", SwingConstants.CENTER);
-                tiles[i][j] = currTile;
+                mTiles[i][j] = currTile;
                 currTile.setBackground(COLOR_BACKGROUND);
                 currTile.setFont(MEDIUM_FONT);
                 currTile.setOpaque(true);
@@ -167,7 +169,11 @@ public class GUIComponents implements Runnable {
     }
 
     private void addStatusPanelComps() {
-
+        mScoreLabel = new JLabel("0", SwingConstants.CENTER);
+        mScoreLabel.setBackground(COLOR_BACKGROUND);
+        mScoreLabel.setFont(MEDIUM_FONT);
+        mScoreLabel.setOpaque(true);
+        mStatusPanel.add(mScoreLabel);
     }
 
     private void assembleAll() {

@@ -5,24 +5,21 @@ import core.util.BoardDimensions;
 import core.util.Direction;
 import core.util.IHighScore;
 import core.util.Rank;
-import core.view.gui.GUIComponents;
+import core.view.gui.GuiRenderer;
+import core.view.gui.IGuiRenderer;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.regex.Pattern;
 
 public class GUIHandler implements IView {
 
   private IController mController;
-  private GUIComponents mGuiComps;
+  private IGuiRenderer mGuiComps;
 
   private void _startGame(IController controller) {
     if (controller == null) {
       throw new IllegalArgumentException("Null controller provided");
     }
     this.mController = controller;
-    mGuiComps = new GUIComponents(this);
+    mGuiComps = new GuiRenderer();
   }
 
   @Override
@@ -38,12 +35,11 @@ public class GUIHandler implements IView {
   @Override
   public void sendMessage(String message) {
     //TODO : Implement Real User Experience rather than doing nothing
-    return;
   }
 
   @Override
   public void acceptAndRenderBoardState(Rank[] ranks) {
-    mGuiComps.render(ranks);
+    mGuiComps.renderBoardState(ranks);
   }
 
   @Override
