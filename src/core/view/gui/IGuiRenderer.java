@@ -14,15 +14,10 @@ public interface IGuiRenderer {
 
     /**
      * Visually renders the GUI representation of the board state.
-     * @param ranks : 1D array is parsed into the 2D representation
+     * @param ranks 1D array is parsed into the 2D representation
+     * @param score int of player's score
      */
-    void renderBoardState(Rank[] ranks);
-
-    /**
-     * Visually renders the GUI representation of the user's score atm.
-     * @param score
-     */
-    void renderScore(int score);
+    void renderBoardState(Rank[] ranks, int score);
 
 
 

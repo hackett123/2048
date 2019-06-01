@@ -95,7 +95,7 @@ public class GuiRenderer implements Runnable, IGuiRenderer {
     }
 
     @Override
-    public void renderBoardState(Rank[] ranks) {
+    public void renderBoardState(Rank[] ranks, int score) {
         for (Rank rank : ranks) {
             if (rank == null) {
                 throw new IllegalArgumentException("Provided null rank in array");
@@ -116,10 +116,10 @@ public class GuiRenderer implements Runnable, IGuiRenderer {
                 mTiles[i][j].setBackground(color);
             }
         }
+        renderScore(score);
     }
 
-    @Override
-    public void renderScore(int score) {
+    private void renderScore(int score) {
         mScoreLabel.setText("" + score);
     }
 
